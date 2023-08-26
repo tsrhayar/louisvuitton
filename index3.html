@@ -26,16 +26,14 @@
         position: relative;
         overflow: hidden;
       }
-      .info-product,
-      .play-pause,
-      .mute-unmute {
+      .video-option {
         position: absolute;
         bottom: 10px;
         cursor: pointer;
         color: white;
         padding: 5px;
       }
-      .play-pause {
+      /* .play-pause {
         left: 20px;
         width: fit-content;
       }
@@ -46,7 +44,7 @@
       .info-product {
         right: 50%;
         width: fit-content;
-      }
+      } */
 
       video::-webkit-media-controls-timeline {
         display: none;
@@ -66,128 +64,155 @@
     </style>
   </head>
   <body>
-    <!-- <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link text-white px-4" href="#">TEST</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white px-4" href="#">TEST</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a
-                class="active fs-4 fw-bold nav-link text-white"
-                aria-current="page"
-                href="#"
-              >
-                Louis Vuitton
-              </a>
-            </li>
-          </ul>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link text-white px-4" href="#">TEST</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white px-4" href="#">TEST</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav> -->
     <div class="video-list">
       <div
-        class="video-item"
+        class="video-item overflow-hidden"
+        style="height: 100vh"
         data-src="https://sugaclothing.net/wp-content/uploads/2023/08/video-1.mp4"
       >
-        <video class="w-100" controls muted autoplay loop>
+        <video class="vw-100" controls muted autoplay loop>
           <source
             src="https://sugaclothing.net/wp-content/uploads/2023/08/video-1.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
-        <div class="play-pause"><i class="fas fa-pause"></i></div>
-        <div class="mute-unmute"><i class="fas fa-volume-xmark"></i></div>
         <div class="video-option w-100">
-          <div class="d-flex">
+          <div class="d-flex justify-content-between align-items-end px-3">
             <div class="play-pause"><i class="fas fa-pause"></i></div>
+            <div>
+              <p class="fs-4 fw-normal text-center">LOREM IPSUM</p>
+              <div class="d-flex flex-column">
+                <a
+                  href="#"
+                  style="backdrop-filter: blur(15px)"
+                  class="border border-white btn px-5 py-3 rounded-5 text-white mb-2"
+                  >Lorem, ipsum dolor.</a
+                >
+                <a
+                  href="#"
+                  style="backdrop-filter: blur(15px)"
+                  class="border border-white btn px-5 py-3 rounded-5 text-white"
+                  >Contact us</a
+                >
+              </div>
+            </div>
             <div class="mute-unmute"><i class="fas fa-volume-xmark"></i></div>
           </div>
         </div>
       </div>
 
       <div
-        class="video-item"
+        class="video-item overflow-hidden"
+        style="height: 100vh"
         data-src="https://sugaclothing.net/wp-content/uploads/2023/08/Composition-2-1080p.mp4"
       >
-        <video class="w-100" controls muted autoplay loop>
+        <video class="vw-100" controls muted autoplay loop>
           <source
             src="https://sugaclothing.net/wp-content/uploads/2023/08/Composition-2-1080p.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
-
-        <div class="play-pause"><i class="fas fa-pause"></i></div>
-        <div class="mute-unmute"><i class="fas fa-volume-xmark"></i></div>
+        <div class="video-option w-100">
+          <div class="d-flex justify-content-between align-items-end px-3">
+            <div class="play-pause"><i class="fas fa-pause"></i></div>
+            <div>
+              <p class="fs-4 fw-normal text-center">LOREM IPSUM</p>
+              <a
+                href="#"
+                style="backdrop-filter: blur(15px)"
+                class="border border-white btn px-5 py-3 rounded-5 text-white"
+                >Lorem, ipsum dolor.</a
+              >
+            </div>
+            <div class="mute-unmute"><i class="fas fa-volume-xmark"></i></div>
+          </div>
+        </div>
       </div>
       <div
-        class="video-item"
+        class="video-item overflow-hidden"
+        style="height: 100vh"
         data-src="https://sugaclothing.net/wp-content/uploads/2023/08/Composition-3-1080p.mp4"
       >
-        <video class="w-100" controls muted autoplay loop>
+        <video class="vw-100" controls muted autoplay loop>
           <source
             src="https://sugaclothing.net/wp-content/uploads/2023/08/Composition-3-1080p.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
-        <div class="play-pause"><i class="fas fa-pause"></i></div>
-        <div class="mute-unmute"><i class="fas fa-volume-xmark"></i></div>
+        <div class="video-option w-100">
+          <div class="d-flex justify-content-between align-items-end px-3">
+            <div class="play-pause"><i class="fas fa-pause"></i></div>
+            <div>
+              <p class="fs-4 fw-normal text-center">LOREM IPSUM</p>
+              <a
+                href="#"
+                style="backdrop-filter: blur(15px)"
+                class="border border-white btn px-5 py-3 rounded-5 text-white"
+                >Lorem, ipsum dolor.</a
+              >
+            </div>
+            <div class="mute-unmute"><i class="fas fa-volume-xmark"></i></div>
+          </div>
+        </div>
       </div>
       <div
-        class="video-item"
+        class="video-item overflow-hidden"
+        style="height: 100vh"
         data-src="https://sugaclothing.net/wp-content/uploads/2023/08/Composition-4-1080p.mp4"
       >
-        <video class="w-100" controls muted autoplay loop>
+        <video class="vw-100" controls muted autoplay loop>
           <source
             src="https://sugaclothing.net/wp-content/uploads/2023/08/Composition-4-1080p.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
-        <div class="play-pause"><i class="fas fa-pause"></i></div>
-        <div class="mute-unmute"><i class="fas fa-volume-xmark"></i></div>
+        <div class="video-option w-100">
+          <div class="d-flex justify-content-between align-items-end px-3">
+            <div class="play-pause"><i class="fas fa-pause"></i></div>
+            <div>
+              <p class="fs-4 fw-normal text-center">LOREM IPSUM</p>
+              <a
+                href="#"
+                style="backdrop-filter: blur(15px)"
+                class="border border-white btn px-5 py-3 rounded-5 text-white"
+                >Lorem, ipsum dolor.</a
+              >
+            </div>
+            <div class="mute-unmute"><i class="fas fa-volume-xmark"></i></div>
+          </div>
+        </div>
       </div>
       <div
-        class="video-item"
+        class="video-item overflow-hidden"
+        style="height: 100vh"
         data-src="https://sugaclothing.net/wp-content/uploads/2023/08/Composition-5-1080p.mp4"
       >
-        <video class="w-100" controls muted autoplay loop>
+        <video class="vw-100" controls muted autoplay loop>
           <source
             src="https://sugaclothing.net/wp-content/uploads/2023/08/Composition-5-1080p.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
-        <div class="play-pause"><i class="fas fa-pause"></i></div>
-        <div class="mute-unmute"><i class="fas fa-volume-xmark"></i></div>
+        <div class="video-option w-100">
+          <div class="d-flex justify-content-between align-items-end px-3">
+            <div class="play-pause"><i class="fas fa-pause"></i></div>
+            <div>
+              <p class="fs-4 fw-normal text-center">LOREM IPSUM</p>
+              <a
+                href="#"
+                style="backdrop-filter: blur(15px)"
+                class="border border-white btn px-5 py-3 rounded-5 text-white"
+                >Lorem, ipsum dolor.</a
+              >
+            </div>
+            <div class="mute-unmute"><i class="fas fa-volume-xmark"></i></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -204,6 +229,13 @@
           console.log("Video height:", videoHeight);
           $(this).height(videoHeight); // Set the height of the .video-item element
         });
+        setInterval(() => {
+          $(".video-item").each(function () {
+            const videoHeight = $(this).find("video").height();
+            console.log("Video height:", videoHeight);
+            $(this).height(videoHeight); // Set the height of the .video-item element
+          });
+        }, 1000);
 
         const videoItems = document.querySelectorAll(".video-item");
         const muteUnmuteAllButton = $("#mute-unmute-all");
