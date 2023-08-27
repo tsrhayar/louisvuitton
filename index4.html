@@ -301,26 +301,6 @@
           $(".video-item video").prop("muted", !allVideosMuted);
           $(".mute-unmute i").toggleClass("fa-volume-xmark fa-volume-up");
         });
-
-        var prevScroll = $(window).scrollTop();
-
-        $(window).on("scroll", function () {
-          var currentScroll = $(window).scrollTop();
-
-          if (currentScroll > prevScroll && currentScroll > 100) {
-            $(".navbar").slideUp();
-          } else {
-            $(".navbar").slideDown();
-          }
-
-          if ($(this).scrollTop() > 100) {
-            $(".navbar").addClass("bg-dark");
-          } else {
-            $(".navbar").removeClass("bg-dark");
-          }
-
-          prevScroll = currentScroll;
-        });
       });
     </script>
   </body>
