@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -210,23 +209,28 @@
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
     <script>
-      $(document).ready(function () {
+      document.addEventListener("DOMContentLoaded", function () {
         function applyStyles() {
-          $(".my-custom-video-item").each(function () {
-            var parent = $(this);
-            var video = parent.find("video");
+          const customVideoItems = document.querySelectorAll(
+            ".my-custom-video-item"
+          );
 
-            if (parent.width() > parent.height()) {
-              video.addClass("my-custom-video-fil vw-100").removeClass("vh-100");
+          customVideoItems.forEach(function (item) {
+            const parent = item;
+            const video = parent.querySelector("video");
+
+            if (parent.offsetWidth > parent.offsetHeight) {
+              video.classList.add("my-custom-video-fil", "vw-100");
+              video.classList.remove("vh-100");
             } else {
-              video.addClass("my-custom-video-fil vh-100").removeClass("vw-100");
+              video.classList.add("my-custom-video-fil", "vh-100");
+              video.classList.remove("vw-100");
             }
           });
         }
@@ -235,15 +239,15 @@
         applyStyles();
 
         // Apply styles when window is resized
-        $(window).on("resize", function () {
+        window.addEventListener("resize", function () {
           applyStyles();
         });
 
         const videoItems = document.querySelectorAll(".my-custom-video-item");
-        const muteUnmuteAllButton = $("#mute-unmute-all");
+        const muteUnmuteAllButton = document.getElementById("mute-unmute-all");
 
-        const playVideoOnScroll = (entries, observer) => {
-          entries.forEach((entry) => {
+        const playVideoOnScroll = function (entries, observer) {
+          entries.forEach(function (entry) {
             if (entry.isIntersecting) {
               const video = entry.target.querySelector("video");
               video.play();
@@ -259,47 +263,61 @@
           threshold: 0.5, // Adjust the threshold as needed
         });
 
-        videoItems.forEach((item) => {
+        videoItems.forEach(function (item) {
           observer.observe(item);
         });
 
-        $(".my-custom-video-item").each(function () {
-          var video = $(this).find("video")[0];
-          var playPauseButton = $(this).find(".play-pause");
-          var muteUnmuteButton = $(this).find(".mute-unmute");
+        const customVideoItems = document.querySelectorAll(
+          ".my-custom-video-item"
+        );
 
-          playPauseButton.on("click", function () {
+        customVideoItems.forEach(function (item) {
+          const video = item.querySelector("video");
+          const playPauseButton = item.querySelector(".play-pause");
+          const muteUnmuteButton = item.querySelector(".mute-unmute");
+
+          playPauseButton.addEventListener("click", function () {
             if (video.paused) {
               video.play();
-              playPauseButton.html('<i class="fas fa-pause"></i>');
+              playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
             } else {
               video.pause();
-              playPauseButton.html('<i class="fas fa-play"></i>');
+              playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
             }
           });
 
-          muteUnmuteButton.on("click", function () {
+          muteUnmuteButton.addEventListener("click", function () {
             if (video.muted) {
-              $(".my-custom-video-item").each(function () {
-                var video_ = $(this).find("video")[0];
-                var muteUnmuteButton_ = $(this).find(".mute-unmute");
+              customVideoItems.forEach(function (item) {
+                const video_ = item.querySelector("video");
+                const muteUnmuteButton_ = item.querySelector(".mute-unmute");
 
-                muteUnmuteButton_.html('<i class="fas fa-volume-xmark"></i>');
+                muteUnmuteButton_.innerHTML =
+                  '<i class="fas fa-volume-xmark"></i>';
                 video_.muted = true;
               });
               video.muted = false;
-              muteUnmuteButton.html('<i class="fas fa-volume-up"></i>');
+              muteUnmuteButton.innerHTML = '<i class="fas fa-volume-up"></i>';
             } else {
               video.muted = true;
-              muteUnmuteButton.html('<i class="fas fa-volume-xmark"></i>');
+              muteUnmuteButton.innerHTML =
+                '<i class="fas fa-volume-xmark"></i>';
             }
           });
         });
 
-        muteUnmuteAllButton.on("click", function () {
-          const allVideosMuted = $(".my-custom-video-item video").prop("muted");
-          $(".my-custom-video-item video").prop("muted", !allVideosMuted);
-          $(".mute-unmute i").toggleClass("fa-volume-xmark fa-volume-up");
+        muteUnmuteAllButton.addEventListener("click", function () {
+          const allVideosMuted = document.querySelectorAll(
+            ".my-custom-video-item video"
+          );
+          allVideosMuted.forEach(function (video) {
+            video.muted = !video.muted;
+          });
+          const muteUnmuteIcons = document.querySelectorAll(".mute-unmute i");
+          muteUnmuteIcons.forEach(function (icon) {
+            icon.classList.toggle("fa-volume-xmark");
+            icon.classList.toggle("fa-volume-up");
+          });
         });
       });
     </script>
